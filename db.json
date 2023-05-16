@@ -1,0 +1,29 @@
+{
+  "posts": [
+    {
+      "title": "sfdsgfdhf",
+      "author": "sadfgfhh",
+      "id": 1
+    },
+    {
+      "title": "vghhjb",
+      "author": "fcvghjbk",
+      "id": 2
+    },
+    {
+      "title": "salam",
+      "author": "jkhjgh",
+      "id": 3
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
