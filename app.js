@@ -1,5 +1,8 @@
 const postsContainer = document.getElementById('posts');
+// apimizin url in bildiririk
 const apiUrl = 'http://localhost:3000/posts';
+
+// postlari cekmek ucun funksiyam
 function fetchPosts() {
   fetch(apiUrl)
     .then(response => response.json())
@@ -10,6 +13,9 @@ function fetchPosts() {
       console.error('Error fetching posts:', error);
     });
 }
+
+
+// postlari gostermek ucun funksiyam
 function displayPosts(posts) {
   postsContainer.innerHTML = '';
 
@@ -25,6 +31,8 @@ function displayPosts(posts) {
     postsContainer.appendChild(postElement);
   });
 }
+
+// yeni post yaratmaq ucun funksiya
 function createPost() {
   const titleInput = document.getElementById('title');
   const authorInput = document.getElementById('author');
@@ -53,6 +61,8 @@ function createPost() {
       console.error('Error creating post:', error);
     });
 }
+
+// movcud postu update etmek
 function updatePost(postId) {
   const newTitle = prompt('Enter new title:');
   const newAuthor = prompt('Enter new author:');
@@ -76,6 +86,8 @@ function updatePost(postId) {
       console.error('Error updating post:', error);
     });
 }
+
+// post silmek
 function deletePost(postId) {
   if (confirm('Are you sure you want to delete this post?')) {
     fetch(`${apiUrl}/${postId}`, {
@@ -91,8 +103,12 @@ function deletePost(postId) {
       });
   }
 }
+
+// form tesdiqlendikde yenisin elave etmek
 document.getElementById('postForm').addEventListener('submit', function (event) {
   event.preventDefault();
   createPost();
 });
+
+
 fetchPosts();
